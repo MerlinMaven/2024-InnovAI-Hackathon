@@ -1,104 +1,128 @@
-# Team <AI_TURTLEFORCE>'s Project
+# **Team AI_TURTLEFORCE**  
+
+## **PainSense: AI-Driven Pain Detection and Chatbot Assistance**
+---
+## **Abstract**
+
+### **Background and Problem Statement**  
+Accurate and timely pain detection is a persistent challenge in healthcare, particularly for individuals unable to communicate effectively. This project proposes an automated AI-driven solution to detect, analyze, and manage pain using multimodal inputs such as audio and video.
+
+### **Impact and Proposed Solution**  
+The PainSense system leverages computer vision, audio analysis, and natural language processing to:  
+1. Detect pain-related signals from video and audio inputs.  
+2. Provide real-time feedback through an AI-powered chatbot.  
+3. Support healthcare providers and caregivers with actionable insights for improved decision-making.  
+
+### **Outcomes and Deliverables**  
+- **Multimodal Pain Detection**: Combines facial expression recognition (FER) and audio sentiment analysis.  
+- **Interactive Chatbot**: Offers real-time assistance and pain-related advice.  
+- **Visualization Tools**: Provides graphs to track pain levels over time.  
+- **User-Friendly Interface**: Accessible via Flask API and Gradio interface.  
 
 ---
 
-# PainSense: AI-Driven Pain Detection and Chatbot Assistance
-
-## Abstract
-
-### Background and Problem Statement
-Pain is a critical signal in healthcare, yet its accurate and timely detection remains a challenge, especially in scenarios where individuals are unable to communicate effectively. This project addresses the need for an automated, AI-driven solution to detect, analyze, and assist in managing pain using multimodal inputs like audio and video.
-
-### Impact and Proposed Solution
-The proposed system combines computer vision, audio analysis, and natural language processing to:
-1. Detect pain-related signals in audio and video.
-2. Provide real-time feedback through an AI-powered chatbot.
-3. Offer insights to healthcare providers or caregivers for better decision-making.
-
-### Project Outcomes and Deliverables
-- **Multimodal Pain Detection**: Combines facial expression recognition and audio sentiment analysis.
-- **Interactive Chatbot**: Assists users by answering queries and providing pain-related recommendations.
-- **Visualization**: Generates graphs to represent pain levels over time.
-- **Flask API and Gradio Interface**: Enables integration and user-friendly interaction.
+## **Key Features**
+1. **Multimodal Analysis**: Integrates audio (via Wav2Vec2) and video (via FER) models for pain detection.  
+2. **Customizable Thresholds**: Allows configuration of pain intensity and confidence thresholds.  
+3. **Real-Time Feedback**: Provides immediate results and chatbot recommendations.  
+4. **Data Visualization**: Displays pain trends through graphs for better insights.  
 
 ---
 
-## Features
-1. **Audio and Video Analysis**: Detects pain signals using models like FER (Facial Emotion Recognition) and Wav2Vec2 for audio.
-2. **Customizable Thresholds**: Configurable thresholds for pain and confidence levels.
-3. **Real-Time Feedback**: Provides immediate results and chatbot assistance.
-4. **Visualization**: Displays pain scores graphically for better understanding.
+## **System Requirements**
+- Python 3.8 or later  
+- Required Libraries: Install via `requirements.txt`  
 
 ---
 
-## System Requirements
+## **How to Run the Project**
 
-- Python 3.8 or later
-- Required Libraries (install via `requirements.txt`):
+1. **Clone the Repository**:  
+   ```bash
+   git clone <repository-url>
+   cd PainSense
+   ```
+2. **Install Dependencies**:  
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **Run the Flask Server**:  
+   ```bash
+   python app.py
+   ```
+4. **Launch Gradio Interface**:  
+   Open the provided link in your terminal to access the interface in your browser.
+
 ---
 
-## How to Run the Project
+## **Instructions**
 
-Step 1: Clone the Repository
-Step 2: Install Dependencies
-Step 3: Run the Flask Server
-Step 4: Launch Gradio Interface
-The Gradio interface will automatically launch in your default browser, or you can access it via the link provided in the terminal.
-
----
-
-## Instructions
-
-### **Uploading Inputs**
-1. Upload an **audio file** (e.g., `.mp3`, `.wav`) or **video file** (e.g., `.mp4`, `.avi`).
+### **Input Upload**  
+1. Upload an **audio** (e.g., `.mp3`, `.wav`) or **video** (e.g., `.mp4`, `.avi`) file.  
 2. Click **Submit** to analyze the input.
 
-### **Viewing Results**
-- **Pain Detection Result**: Indicates if pain is detected.
-- **Average Pain Score**: Displays the overall pain intensity.
-- **Graph**: Shows the pain score variation over time.
+### **Results Display**  
+- **Pain Detection Result**: Indicates whether pain is detected.  
+- **Average Pain Score**: Summarizes overall pain intensity.  
+- **Pain Trend Graph**: Visualizes pain levels over time.
 
-### **Chatbot Interaction**
-- Type your query in the chatbot input box.
-- Receive contextual assistance based on pain detection results.
-
----
-
-## Architecture
-
-### **1. Pain Detection**
-- **Facial Expression Recognition (FER)**: Detects emotions related to pain (e.g., anger, fear, sadness) from video frames.
-- **Audio Sentiment Analysis**: Analyzes audio for pain-related emotional cues using Wav2Vec2.
-
-### **2. Data Fusion**
-Combines results from video and audio analysis using a weighted average.
-
-### **3. Visualization**
-- Generates a graph illustrating pain score trends.
-- Includes a configurable pain threshold for better insights.
-
-### **4. Chatbot**
-- Built using the Groq API for contextual interactions.
-- Processes user queries and adapts responses based on pain detection results.
+### **Chatbot Interaction**  
+- Interact with the chatbot by typing queries in the input box.  
+- Receive personalized recommendations and contextual assistance.  
 
 ---
 
-## Acknowledgements
-This project utilizes:
-- [FER](https://github.com/justinshenk/fer) for facial emotion recognition.
-- [Wav2Vec2](https://huggingface.co/models) for audio sentiment analysis.
-- [Gradio](https://gradio.app/) for interactive UI.
-- [Flask](https://flask.palletsprojects.com/) for API backend.
+## **System Architecture**
+
+### 1. **Pain Detection**  
+- **Facial Expression Recognition (FER)**: Detects pain-related emotions (e.g., sadness, fear) from video frames.  
+- **Audio Sentiment Analysis**: Identifies pain-related cues in voice recordings using Wav2Vec2.  
+
+### 2. **Data Fusion**  
+- Combines audio and video analysis results using a weighted average approach.
+
+### 3. **Visualization**  
+- Generates graphical representations of pain scores over time.  
+- Allows users to configure thresholds for better analysis.
+
+### 4. **Chatbot**  
+- Powered by Groq API to deliver contextual responses.  
+- Adapts recommendations based on pain detection results.  
 
 ---
 
-## Future Enhancements
-1. Extend support for additional languages in the chatbot.
-2. Incorporate more robust pain detection models.
-3. Enable integration with wearable devices for real-time monitoring.
-4. Radiology Report Generation:
-   - Develop an AI-driven system to generate detailed radiology reports in English and French for radiologists based on medical images.
-   - Simplify these reports into Darija (Moroccan Arabic) for better understanding by patients.
-5. Explore multi-modal fusion techniques to improve detection accuracy across diverse inputs.
+## **Project Workflow**
+
+1. **Main Entry Point**:  
+   - The project begins at `index.php`, which redirects users to `hackathon.html`.  
+
+2. **User Interface**:  
+   - `hackathon.html` serves as the primary interface, integrating HTML, CSS, and JavaScript for navigation.  
+
+3. **Authentication**:  
+   - `process.php` handles sign-up and log-in functionalities, managing database interactions.  
+
+4. **Chatbot**:  
+   - After authentication, users access `chatbot.html` to interact with the chatbot and explore pain analysis results.  
 
 ---
+
+## **Acknowledgements**
+We thank the creators of these technologies:  
+- [FER](https://github.com/justinshenk/fer) for facial emotion recognition.  
+- [Wav2Vec2](https://huggingface.co/models) for audio sentiment analysis.  
+- [Gradio](https://gradio.app/) for interactive interfaces.  
+- [Flask](https://flask.palletsprojects.com/) for backend integration.  
+
+---
+
+## **Future Enhancements**
+1. Add multilingual support for the chatbot.  
+2. Enhance detection models for improved accuracy.  
+3. Integrate wearable device compatibility for real-time monitoring.  
+4. Expand capabilities to generate AI-driven radiology reports:  
+   - Detailed reports for radiologists in English and French.  
+   - Simplified summaries in Darija (Moroccan Arabic) for patients.  
+5. Explore advanced multi-modal fusion techniques.  
+
+--- 
